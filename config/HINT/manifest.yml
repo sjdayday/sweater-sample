@@ -1,0 +1,11 @@
+---
+applications:
+- name: sweater-sample
+  host: sweater-sample-HINT
+  buildpack: liberty-for-java
+  path: ./target
+  memory: 256M
+  instances: 2
+  timeout: 120
+  env: 
+    LOG_LEVEL: ERROR

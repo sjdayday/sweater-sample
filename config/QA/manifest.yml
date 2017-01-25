@@ -1,0 +1,14 @@
+---
+applications:
+- name: sweater-sample
+  host: sweater-sample-HINT
+  buildpack: liberty-for-java
+  path: ./target
+  memory: 256M
+  instances: 2
+  timeout: 120
+  env: 
+    LOG_LEVEL: ERROR
+  services:
+    slog_CSG-KPORG-RX-MS-SJ001_QA_sweater-sample
+    smon_sweater-sample-QA_dynatrace
