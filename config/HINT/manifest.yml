@@ -3,7 +3,7 @@ applications:
 - name: sweater-sample
   host: sweater-sample-HINT
   buildpack: liberty-for-java
-  path: ./target
+  path: ./target/sweater-sample.war
   memory: 256M
   instances: 2
   timeout: 120
