@@ -16,6 +16,7 @@ public class Delay {
 	public ControlResponse control(@PathParam("delay") int delay) {
 		ControlResponse response = new ControlResponse(); 
 		response.setGlobalDelay(delay);
+		System.err.println("Delay requested: "+delay);
 		return  response; 
 	}
 	

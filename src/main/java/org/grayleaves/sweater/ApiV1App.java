@@ -1,13 +1,13 @@
 package org.grayleaves.sweater;
 
 import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
 
-import org.glassfish.jersey.server.ResourceConfig;
 
-
-	@ApplicationPath("/api/v1")
-	public class ApiV1App extends ResourceConfig {
+	@ApplicationPath("/api/v1/*")
+	public class ApiV1App extends Application {
 	    public ApiV1App() {
-	        packages("org.grayleaves.sweater");
+	    	System.out.println("liberty reached");
+//	        packages("org.grayleaves.sweater");
 	    }
 }

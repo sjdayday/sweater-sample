@@ -2,4 +2,6 @@
 .classpath
 .settings
 .project
+.factorypath
 WebContent/WEB-INF/
+/.apt_generated/

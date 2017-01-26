@@ -14,6 +14,7 @@ public class Status {
 	public StatusResponse statusMessage() {
 		StatusResponse statusResponse = new StatusResponse();
 		statusResponse.delay(); 
+		System.out.println("Status elapsed time: "+statusResponse.getElapsedTime()+"; response: "+statusResponse.getResponse());
 		return statusResponse; 
 	}
 	

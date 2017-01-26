@@ -14,6 +14,7 @@ public class Hang {
 	public ControlResponse control() {
 		ControlResponse response = new ControlResponse(); 
 		response.setHang(true);
+		System.err.println("Hang requested.");
 		return  response; 
 	}
 	

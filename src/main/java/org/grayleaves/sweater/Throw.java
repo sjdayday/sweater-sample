@@ -14,6 +14,7 @@ public class Throw {
 	public ControlResponse control() {
 		ControlResponse response = new ControlResponse(); 
 		response.setThrowException(true);
+		System.err.println("Throw exceptions requested.");
 		return  response; 
 	}
 	

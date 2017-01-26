@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 applications:  
 - name: rxadapter
   host: rxadapter-QA
@@ -7,3 +8,18 @@ applications:
   memory: 256M
   instances: 2 2 
   timeout: 120
+=======
+applications:
+- name: sweater-sample
+  host: sweater-sample-QA
+  buildpack: liberty-for-java
+  path: ./target/sweater-sample.war
+  memory: 256M
+  instances: 2
+  timeout: 120
+  env: 
+    LOG_LEVEL: ERROR
+  services:
+    slog_CSG-KPORG-RX-MS-SJ001_QA_sweater-sample
+    smon_sweater-sample-QA_dynatrace
+>>>>>>> 62940079c730506efbae2dca9d0b241d6d2a6871

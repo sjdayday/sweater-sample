@@ -9,7 +9,6 @@ class StatusResponse {
 		private static String RESPONSE = NORMAL; 
 		protected static int DELAY = 0;
 		protected static boolean HANG = false;
-		private static boolean EXCEPTIONS;
 		public static boolean THROW_EXCEPTIONS;
 		
 		public static void forceDelay(int delay) {

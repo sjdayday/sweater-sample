@@ -2,19 +2,24 @@ package org.grayleaves.sweater;
 
 import static org.junit.Assert.*;
 
+import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
+import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.grayleaves.utility.Clock;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+//FIXME would like to use glassfish for serverless testing without introducing glassfish in prod
+// would need to instantiate a javax.ws.rs.core.Application for testing, 
+// not the subclass org.glassfish.jersey.server.ResourceConfig, as here 
 public class StatusTest extends JerseyTest {
 
 	@Override
 	protected Application configure() {
-		return new ApiV1App();
+		return new TestingApiV1App();
 	}
 
 	@Override
@@ -77,6 +82,11 @@ public class StatusTest extends JerseyTest {
 		StatusResponse.hang(false); 
 		StatusResponse.throwExceptions(false); 
 	}
-	
-	
+
+	@ApplicationPath("/api/v1/*")
+	private class TestingApiV1App extends ResourceConfig {
+	    public TestingApiV1App() {
+	        packages("org.grayleaves.sweater");
+	    }	
+    }
 }
