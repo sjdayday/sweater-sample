@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.grayleaves</groupId>
+  <groupId>org.kp.ops.services</groupId>
   <artifactId>sweater-sample</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
@@ -9,6 +9,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 <!--         <github.global.server>github</github.global.server> -->   
      </properties>
+    <distributionManagement>
+        <repository>
+            <id>inhouse_release</id>
+            <name>cskpcloudxp0895-releases</name>
+            <url>http://cskpcloudxp0895.cloud.kp.org:8081/artifactory/inhouse_release</url>
+        </repository>
+     <snapshotRepository>
+            <id>inhouse_snapshot</id>
+            <name>cskpcloudxp0895-snapshots</name>
+            <url>http://cskpcloudxp0895.cloud.kp.org:8081/artifactory/inhouse_snapshot</url>
+     </snapshotRepository>
+   </distributionManagement>
   
     <dependencies>
     <dependency>

@@ -1,0 +1,9 @@
+---
+applications:  
+- name: rxadapter
+  host: rxadapter-HINT
+  buildpack: liberty-for-java
+  path: ../../target/${ARTIFACT_NAME}
+  memory: 256M
+  instances: 1
+  timeout: 120
