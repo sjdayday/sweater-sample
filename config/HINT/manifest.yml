@@ -1,22 +1,11 @@
 ---
-<<<<<<< HEAD
-applications:  
-- name: rxadapter
-  host: rxadapter-HINT
-  buildpack: liberty-for-java
-  path: ../../target/${ARTIFACT_NAME}
-  memory: 256M
-  instances: 1
-  timeout: 120
-=======
 applications:
 - name: sweater-sample
   host: sweater-sample-HINT
   buildpack: liberty-for-java
-  path: ./target/sweater-sample.war
+  path: ../../target/${ARTIFACT_NAME}
   memory: 256M
   instances: 2
   timeout: 120
   env: 
     LOG_LEVEL: ERROR
->>>>>>> 62940079c730506efbae2dca9d0b241d6d2a6871
