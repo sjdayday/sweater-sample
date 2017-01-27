@@ -6,7 +6,7 @@ applications:
   path: ../../target/${ARTIFACT_NAME}
   memory: 256M
   instances: 2
-  timeout: 120
+  timeout: 1200
   buildpack: https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack#v2.6.0.0
   env: 
     LOG_LEVEL: ERROR
