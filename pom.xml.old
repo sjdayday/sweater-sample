@@ -9,12 +9,12 @@
     <repository>
       <id>inhouse_release</id>
       <name>cskpcloudxp0813-releases</name>
-      <url>https://artifactory-fof.appl.kp.org/artifactory/inhouse_release</url>
+      <url>http://cskpcloudxp0813.cloud.kp.org:8081/artifactory/inhouse_release</url>
     </repository>
    <snapshotRepository>
      <id>inhouse_snapshot</id>
      <name>cskpcloudxp0813-snapshots</name>
-     <url>https://artifactory-fof.appl.kp.org/artifactory/inhouse_snapshot</url>
+     <url>http://cskpcloudxp0813.cloud.kp.org:8081/artifactory/inhouse_snapshot</url>
    </snapshotRepository>
  </distributionManagement>
 
