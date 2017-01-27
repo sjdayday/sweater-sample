@@ -7,5 +7,8 @@ applications:
   memory: 256M
   instances: 2
   timeout: 120
+  buildpack: https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack#v2.6.0.0
   env: 
     LOG_LEVEL: ERROR
+    IBM_JVM_LICENSE: L-PMAA-A3Z8P2
+    IBM_LIBERTY_LICENSE: L-SWIS-AE3RTG
