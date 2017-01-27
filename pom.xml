@@ -22,7 +22,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 <!--         <github.global.server>github</github.global.server> -->   
      </properties>
-  
     <dependencies>
     <dependency>
       <groupId>junit</groupId>
