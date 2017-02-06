@@ -6,11 +6,9 @@ applications:
   path: ../../target/${ARTIFACT_NAME}
   memory: 256M
   instances: 2
-  timeout: 1200
+  timeout: 180
   env: 
     LOG_LEVEL: ERROR
-    IBM_JVM_LICENSE: L-PMAA-A3Z8P2
-    IBM_LIBERTY_LICENSE: L-SWIS-AE3RTG
   services:
   - slog_CSG-KPORG-RX-MS-SJ001_QA_sweater-sample
   - smon_sweater-sample-QA_dynatrace
