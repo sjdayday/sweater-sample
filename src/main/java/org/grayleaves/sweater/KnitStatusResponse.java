@@ -3,7 +3,7 @@ package org.grayleaves.sweater;
 public class KnitStatusResponse extends StatusResponse {
 
 
-	private static final int STITCHES_PER_YARD = 200;
+	protected static final int STITCHES_PER_YARD = 200;
 	private static KnitStatusResponseEnum COLOR = KnitStatusResponseEnum.GRAY;
 
 	public static void color(KnitStatusResponseEnum color) {
@@ -11,11 +11,18 @@ public class KnitStatusResponse extends StatusResponse {
 	}
 
 	private String knitResponse = "";
+	private YarnService yarnService;
 
 	public KnitStatusResponse() {
 		super(); 
 	}
 	
+
+	public KnitStatusResponse(YarnService yarnService) {
+		this(); 
+		this.yarnService = yarnService; 
+	}
+
 
 	public void knit(int stitches) {
 		int yards = (stitches / STITCHES_PER_YARD) + 1 ;
@@ -39,7 +46,11 @@ public class KnitStatusResponse extends StatusResponse {
 	}
 	
 	protected int getYarn(KnitStatusResponseEnum color, int yards) {
-		return 0;
+		int available = 0; 
+		if (yarnService != null) {
+			available = yarnService.getYarn(color, yards); 
+		}
+		return available;
 	}
 
 	public String getColor() {
@@ -48,8 +59,6 @@ public class KnitStatusResponse extends StatusResponse {
 	public void setColor(String color) {
 		
 	}
-
-
 	public String getKnitResponse() {
 		return knitResponse;
 	}

@@ -35,16 +35,24 @@ public class KnitTest {
 		assertEquals("insufficient GRAY yarn available to knit 1 stitches; 0 stitches knitted", status.getKnitResponse());
 	}
 	@Test
+	public void yarnServiceCanBeProvided() {
+		status = new KnitStatusResponse(new TestingYarnService(KnitStatusResponseEnum.GRAY, 10)); 
+		status.knit(1);
+		assertEquals("1 stitches knitted using 1 yards of GRAY yarn", status.getKnitResponse());
+	}
+	
+	@Test
 	public void knittingWithYarnReturnsStitchesKnitted() {
-		status = new KnitStatusResponse() {
-			@Override
-			protected int getYarn(KnitStatusResponseEnum color, int yards) {
-				return 1;
-			}
-		}; 
+		status = new KnitStatusResponse(new TestingYarnService(KnitStatusResponseEnum.GRAY, 10)); 
 		status.knit(150);
 		assertEquals("150 stitches knitted using 1 yards of GRAY yarn", status.getKnitResponse());
 	}
-	//TODO YarnService
+	@Test
+	public void knittingMoreThanStitchesPerYardUsesAnotherYard() {
+		status = new KnitStatusResponse(new TestingYarnService(KnitStatusResponseEnum.GRAY, 10)); 
+		status.knit(250); 
+		assertEquals("stitches per yard = "+KnitStatusResponse.STITCHES_PER_YARD,
+				"250 stitches knitted using 2 yards of GRAY yarn", status.getKnitResponse());
+	}
 	
 }
