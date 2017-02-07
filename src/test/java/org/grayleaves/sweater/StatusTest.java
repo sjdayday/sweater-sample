@@ -34,7 +34,7 @@ public class StatusTest extends JerseyTest {
 	
 	@Test
 	public void statusReturnsDefaultStatusResponse() {
-		StatusResponse statusResponse = target("status").request().get(StatusResponse.class);  
+		StatusResponse statusResponse = target("v1/status").request().get(StatusResponse.class);  
 		assertEquals(StatusResponse.NAME, statusResponse.getName()); 
 		assertEquals(0, statusResponse.getDelay()); 
 		assertEquals(0, statusResponse.getElapsedTime()); 
@@ -42,35 +42,35 @@ public class StatusTest extends JerseyTest {
 	}
 	@Test
 	public void delayCausesStatusToReturnAfterSetDelay() {
-		ControlResponse controlResponse = target("delay/3").request().get(ControlResponse.class);  
+		ControlResponse controlResponse = target("v1/delay/3").request().get(ControlResponse.class);  
 		assertEquals("setGlobalDelay", controlResponse.getCommand()); 
 		assertEquals(3, controlResponse.getGlobalDelay()); 
-		StatusResponse statusResponse = target("status").request().get(StatusResponse.class);  
+		StatusResponse statusResponse = target("v1/status").request().get(StatusResponse.class);  
 		assertEquals(3, statusResponse.getDelay()); 
 		assertEquals(3, statusResponse.getElapsedTime()); 
 
-		controlResponse = target("delay/0").request().get(ControlResponse.class);  
+		controlResponse = target("v1/delay/0").request().get(ControlResponse.class);  
 		assertEquals(0, controlResponse.getGlobalDelay()); 
-		statusResponse = target("status").request().get(StatusResponse.class);  
+		statusResponse = target("v1/status").request().get(StatusResponse.class);  
 		assertEquals(0, statusResponse.getDelay()); 
 		assertEquals(0, statusResponse.getElapsedTime()); 
 	}
 	@Test
 	public void hangCausesStatusToReturnAfterMaxValueTime() {
-		ControlResponse controlResponse = target("hang").request().get(ControlResponse.class);  
+		ControlResponse controlResponse = target("v1/hang").request().get(ControlResponse.class);  
 		assertEquals("setHang", controlResponse.getCommand()); 
 		assertEquals(Integer.MAX_VALUE, controlResponse.getGlobalDelay()); 
 		assertTrue(controlResponse.isHang()); 
-		StatusResponse statusResponse = target("status").request().get(StatusResponse.class);  
+		StatusResponse statusResponse = target("v1/status").request().get(StatusResponse.class);  
 		assertEquals(Integer.MAX_VALUE, statusResponse.getDelay()); 
 		assertEquals(Integer.MAX_VALUE, statusResponse.getElapsedTime()); 
 	}
 	@Test
 	public void throwCausesStatusToReturnExceptionResponse() {
-		ControlResponse controlResponse = target("throw").request().get(ControlResponse.class);  
+		ControlResponse controlResponse = target("v1/throw").request().get(ControlResponse.class);  
 		assertEquals("setThrowExceptions", controlResponse.getCommand()); 
 		assertTrue(controlResponse.isThrowException()); 
-		StatusResponse statusResponse = target("status").request().get(StatusResponse.class);  
+		StatusResponse statusResponse = target("v1/status").request().get(StatusResponse.class);  
 		assertEquals(StatusResponse.EXCEPTION, statusResponse.getResponse()); 
 	}
 	@Override
@@ -83,7 +83,7 @@ public class StatusTest extends JerseyTest {
 		StatusResponse.throwExceptions(false); 
 	}
 
-	@ApplicationPath("/api/v1/*")
+	@ApplicationPath("/api/*")
 	private class TestingApiV1App extends ResourceConfig {
 	    public TestingApiV1App() {
 	        packages("org.grayleaves.sweater");

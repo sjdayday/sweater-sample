@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 
-@Path("/status")
+@Path("/v1/status")
 public class Status {
 
 	@GET

@@ -7,7 +7,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 
-@Path("/delay")
+@Path("/v1/delay")
 public class Delay {
 
 	@GET
@@ -19,5 +19,6 @@ public class Delay {
 		System.err.println("Delay requested: "+delay);
 		return  response; 
 	}
+	
 	
 }

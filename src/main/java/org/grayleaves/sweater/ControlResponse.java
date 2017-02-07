@@ -46,4 +46,12 @@ public class ControlResponse {
 			setCommand("setThrowExceptions"); 
 		}
 	}
+
+	public void setColor(String color) {
+		KnitStatusResponse.forceColor(color); 
+		setCommand("setColor"); 
+	}
+	public String getColor() {
+		return KnitStatusResponse.COLOR.toString(); 
+	}
 }

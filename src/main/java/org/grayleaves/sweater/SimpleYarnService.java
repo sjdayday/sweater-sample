@@ -3,11 +3,11 @@ package org.grayleaves.sweater;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TestingYarnService implements YarnService {
+public class SimpleYarnService implements YarnService {
 
 	private Map<KnitStatusResponseEnum, Integer> yarn = new HashMap<>(); 
 	
-	public TestingYarnService(KnitStatusResponseEnum color, int yards) {
+	public SimpleYarnService(KnitStatusResponseEnum color, int yards) {
 		yarn.put(color, yards);
 	}
 
