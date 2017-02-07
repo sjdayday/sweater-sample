@@ -23,7 +23,7 @@ public class KnitStatusResponse extends StatusResponse {
 		int possible = getPossibleStitches(stitches, available, yards);
 		if (available < yards) {
 			
-			knitResponse = "insufficient "+getColor()+" yarn available to knit "+stitches+" stitches; "+possible+" stitches knitted.";
+			knitResponse = "insufficient "+getColor()+" yarn available to knit "+stitches+" stitches; "+possible+" stitches knitted";
 		}
 		else {
 			knitResponse = stitches+" stitches knitted using "+available+" yards of GRAY yarn";
@@ -37,7 +37,7 @@ public class KnitStatusResponse extends StatusResponse {
 		}
 		return possible;
 	}
-
+	
 	protected int getYarn(KnitStatusResponseEnum color, int yards) {
 		return 0;
 	}

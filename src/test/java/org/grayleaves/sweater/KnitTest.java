@@ -43,7 +43,7 @@ public class KnitTest {
 			}
 		}; 
 		status.knit(150);
-		assertEquals("150 stitches knitted using 1 yard of GRAY yarn", status.getKnitResponse());
+		assertEquals("150 stitches knitted using 1 yards of GRAY yarn", status.getKnitResponse());
 	}
 	//TODO YarnService
 	
