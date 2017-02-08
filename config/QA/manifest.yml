@@ -6,7 +6,7 @@ applications:
   path: ../../target/${ARTIFACT_NAME}
   memory: 256M
   instances: 2
-  timeout: 1200
+  timeout: 120
   env: 
     LOG_LEVEL: ERROR
     IBM_JVM_LICENSE: L-PMAA-A3Z8P2
