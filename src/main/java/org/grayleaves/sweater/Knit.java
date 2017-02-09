@@ -16,6 +16,7 @@ public class Knit {
 	public KnitStatusResponse knit(@PathParam("stitches") int stitches) {
 		KnitStatusResponse knitResponse = new KnitStatusResponse(); 
 		knitResponse.knit(stitches);
+		knitResponse.delay();
 		System.out.println("Status elapsed time: "+knitResponse.getElapsedTime()+"; response: "+knitResponse.getResponse()+"; knitting: "+knitResponse.getKnitResponse());
 		return knitResponse;
 	}
