@@ -61,6 +61,7 @@ public class WebYarnService implements YarnService {
 			} 
 			catch (NumberFormatException e) {} 
 		}
+		System.out.println(timeout+": "+time);
 		return time;
 	}
 	private void buildURL() {

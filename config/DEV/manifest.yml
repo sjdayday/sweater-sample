@@ -1,0 +1,14 @@
+---
+applications:
+- name: sweater-sample-blue
+  host: sweater-sample-blue
+  buildpack: liberty-for-java
+  path: ../../target/sweater-sample.war
+  memory: 256M
+  instances: 2
+  timeout: 180
+  env: 
+    YARN_SERVICE_URL: http://yarn.kpsj001.us-west.mybluemix.net
+    USE_WEB_YARN_SERVICE: true
+    CONNECT_TIMEOUT: 5000    
+    READ_TIMEOUT: 5000
