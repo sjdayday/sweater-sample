@@ -5,13 +5,13 @@ public class KnitStatusResponse extends StatusResponse {
 
 	protected static final int STITCHES_PER_YARD = 200;
 	protected static YarnEnum COLOR = YarnEnum.GRAY;
+	private static YarnService YARN_SERVICE;
 
 	public static void color(YarnEnum color) {
 		COLOR  = color; 
 	}
 
 	private String knitResponse = "";
-	private YarnService service;
 
 	public KnitStatusResponse() {
 		super(); 
@@ -40,8 +40,8 @@ public class KnitStatusResponse extends StatusResponse {
 	
 	protected int getYarn(YarnEnum color, int yards) {
 		int available = 0; 
-		if (service != null) {
-			available = service.getYarn(color, yards); 
+		if (YARN_SERVICE != null) {
+			available = YARN_SERVICE.getYarn(color, yards); 
 		}
 		return available;
 	}
@@ -61,8 +61,8 @@ public class KnitStatusResponse extends StatusResponse {
 		this.knitResponse = knitResponse;
 	}
 
-	public void setYarnService(YarnService yarnService) {
-		this.service = yarnService; 
+	public static void setYarnService(YarnService yarnService) {
+		YARN_SERVICE = yarnService; 
 	}
 
 	public static void forceColor(String color) {

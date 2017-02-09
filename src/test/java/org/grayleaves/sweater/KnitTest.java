@@ -60,6 +60,7 @@ public class KnitTest extends JerseyTest {
 	private class TestingApiV1App extends ResourceConfig {
 	    public TestingApiV1App() {
 	        packages("org.grayleaves.sweater");
-	    }	
+	        ApiV1App.configure(); 
+	    }
     }
 }

@@ -16,6 +16,7 @@ public class KnitStatusResponseTest {
         Clock.reset();
         StatusResponse.forceDelay(0); 
         StatusResponse.throwExceptions(false); 
+        KnitStatusResponse.setYarnService(null); 
     }
 	@Test
 	public void colorDefaultsToGray() {
@@ -37,7 +38,7 @@ public class KnitStatusResponseTest {
 	@Test
 	public void yarnServiceCanBeProvided() {
 		status = new KnitStatusResponse(); 
-		status.setYarnService(new SimpleYarnService(YarnEnum.GRAY, 10)); 
+		KnitStatusResponse.setYarnService(new SimpleYarnService(YarnEnum.GRAY, 10)); 
 		status.knit(1);
 		assertEquals("1 stitches knitted using 1 yards of GRAY yarn", status.getKnitResponse());
 	}
@@ -45,14 +46,14 @@ public class KnitStatusResponseTest {
 	@Test
 	public void knittingWithYarnReturnsStitchesKnitted() {
 		status = new KnitStatusResponse(); 
-		status.setYarnService(new SimpleYarnService(YarnEnum.GRAY, 10)); 
+		KnitStatusResponse.setYarnService(new SimpleYarnService(YarnEnum.GRAY, 10)); 
 		status.knit(150);
 		assertEquals("150 stitches knitted using 1 yards of GRAY yarn", status.getKnitResponse());
 	}
 	@Test
 	public void knittingMoreThanStitchesPerYardUsesAnotherYard() {
 		status = new KnitStatusResponse(); 
-		status.setYarnService(new SimpleYarnService(YarnEnum.GRAY, 10)); 
+		KnitStatusResponse.setYarnService(new SimpleYarnService(YarnEnum.GRAY, 10)); 
 		status.knit(250); 
 		assertEquals("stitches per yard = "+KnitStatusResponse.STITCHES_PER_YARD,
 				"250 stitches knitted using 2 yards of GRAY yarn", status.getKnitResponse());
