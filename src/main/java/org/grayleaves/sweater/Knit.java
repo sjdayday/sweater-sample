@@ -15,7 +15,7 @@ public class Knit {
 	@Produces(MediaType.APPLICATION_JSON)
 	public KnitStatusResponse knit(@PathParam("stitches") int stitches) {
 		KnitStatusResponse knitResponse = new KnitStatusResponse(); 
-		knitResponse.setYarnService(new SimpleYarnService(KnitStatusResponseEnum.GRAY, 10)); 
+		knitResponse.setYarnService(new SimpleYarnService(YarnEnum.GRAY, 10)); 
 		knitResponse.knit(stitches);
 		System.out.println("Status elapsed time: "+knitResponse.getElapsedTime()+"; response: "+knitResponse.getResponse()+"; knitting: "+knitResponse.getKnitResponse());
 		return knitResponse;

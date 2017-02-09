@@ -24,7 +24,7 @@ public class KnitStatusResponseTest {
 	}
 	@Test
 	public void severalColorsSupported() {
-		KnitStatusResponse.color(KnitStatusResponseEnum.WHITE);
+		KnitStatusResponse.color(YarnEnum.WHITE);
 		status = new KnitStatusResponse(); 
 		assertEquals("WHITE", status.getColor());
 	}
@@ -37,7 +37,7 @@ public class KnitStatusResponseTest {
 	@Test
 	public void yarnServiceCanBeProvided() {
 		status = new KnitStatusResponse(); 
-		status.setYarnService(new SimpleYarnService(KnitStatusResponseEnum.GRAY, 10)); 
+		status.setYarnService(new SimpleYarnService(YarnEnum.GRAY, 10)); 
 		status.knit(1);
 		assertEquals("1 stitches knitted using 1 yards of GRAY yarn", status.getKnitResponse());
 	}
@@ -45,14 +45,14 @@ public class KnitStatusResponseTest {
 	@Test
 	public void knittingWithYarnReturnsStitchesKnitted() {
 		status = new KnitStatusResponse(); 
-		status.setYarnService(new SimpleYarnService(KnitStatusResponseEnum.GRAY, 10)); 
+		status.setYarnService(new SimpleYarnService(YarnEnum.GRAY, 10)); 
 		status.knit(150);
 		assertEquals("150 stitches knitted using 1 yards of GRAY yarn", status.getKnitResponse());
 	}
 	@Test
 	public void knittingMoreThanStitchesPerYardUsesAnotherYard() {
 		status = new KnitStatusResponse(); 
-		status.setYarnService(new SimpleYarnService(KnitStatusResponseEnum.GRAY, 10)); 
+		status.setYarnService(new SimpleYarnService(YarnEnum.GRAY, 10)); 
 		status.knit(250); 
 		assertEquals("stitches per yard = "+KnitStatusResponse.STITCHES_PER_YARD,
 				"250 stitches knitted using 2 yards of GRAY yarn", status.getKnitResponse());

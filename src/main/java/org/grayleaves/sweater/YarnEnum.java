@@ -1,6 +1,6 @@
 package org.grayleaves.sweater;
 
-public enum KnitStatusResponseEnum {
+public enum YarnEnum {
 	
 	GRAY,
 	WHITE,

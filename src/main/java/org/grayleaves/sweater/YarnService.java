@@ -2,5 +2,5 @@ package org.grayleaves.sweater;
 
 public interface YarnService {
 
-	public int getYarn(KnitStatusResponseEnum color, int yards);
+	public int getYarn(YarnEnum color, int yards);
 }
