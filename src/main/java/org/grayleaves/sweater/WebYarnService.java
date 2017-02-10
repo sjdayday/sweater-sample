@@ -1,8 +1,5 @@
 package org.grayleaves.sweater;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
@@ -61,7 +58,7 @@ public class WebYarnService implements YarnService {
 			} 
 			catch (NumberFormatException e) {} 
 		}
-		System.out.println(timeout+": "+time);
+//		System.out.println(timeout+": "+time);
 		return time;
 	}
 	private void buildURL() {
