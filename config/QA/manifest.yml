@@ -1,6 +1,6 @@
 ---
 applications:
-- name: sweater-sample
+- name: sweater-sample-QA
   host: sweater-sample-QA
   buildpack: liberty-for-java
   path: ../../target/${ARTIFACT_NAME}
@@ -9,6 +9,10 @@ applications:
   timeout: 180
   env: 
     LOG_LEVEL: ERROR
+    YARN_SERVICE_URL: http://yarn-QA.kpsj001.us-west.mybluemix.net/api/v1
+    USE_WEB_YARN_SERVICE: true
+    CONNECT_TIMEOUT: 5000
+    READ_TIMEOUT: 5000
   services:
   - slog_CSG-KPORG-RX-MS-SJ001_QA_sweater-sample
   - smon_nonprod_dynatrace
