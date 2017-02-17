@@ -11,5 +11,5 @@ applications:
     LOG_LEVEL: ERROR
   services:
   - slog_CSG-KPORG-RX-MS-SJ001_QA_sweater-sample
-  - smon_sweater-sample-QA_dynatrace
+  - smon_nonprod_dynatrace
   - Auto-Scaling Dedicated-xn
