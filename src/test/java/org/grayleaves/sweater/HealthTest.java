@@ -41,7 +41,7 @@ public class HealthTest extends EnvironmentTest {
 	@Test
 	public void healthReturnsInstanceNumber() {
 		HealthResponse healthResponse = target("v1.1/health").request().get(HealthResponse.class);  
-		assertEquals("1", healthResponse.getInstance()); 
+		assertEquals("1", healthResponse.getCfInstanceIndex()); 
 	}
 	@Override
 	@After

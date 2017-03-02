@@ -13,11 +13,11 @@ public class HealthResponse {
 	public void setStatus(String status) {
 	}
 
-	public String getInstance() {
+	public String getCfInstanceIndex() {
 		return INSTANCE_VALUE;
 	}
 
-	public void setInstance(String instance) {
+	public void setCfInstanceIndex(String cfInstanceIndex) {
 	}
 	
 }
