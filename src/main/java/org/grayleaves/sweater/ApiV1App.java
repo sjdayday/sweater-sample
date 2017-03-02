@@ -12,6 +12,7 @@ import javax.ws.rs.core.Application;
 	    	configure();
 	    }
 	    public static void configure() {
+	    	determineInstance();
 	    	String flag = System.getenv("USE_WEB_YARN_SERVICE");
 	    	System.out.println("flag: "+flag);
 	    	if ((flag != null) && (flag.equalsIgnoreCase("true"))) {
@@ -21,5 +22,8 @@ import javax.ws.rs.core.Application;
 	    		KnitStatusResponse.setYarnService(new SimpleYarnService(YarnEnum.GRAY, 10)); 
 	    	}
 	    }
+		public static void determineInstance() {
+			HealthResponse.INSTANCE_VALUE = System.getenv(HealthResponse.INSTANCE_KEY);
+		}
 	    
 }
