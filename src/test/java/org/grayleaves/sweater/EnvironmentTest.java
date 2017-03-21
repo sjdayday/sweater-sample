@@ -8,7 +8,7 @@ import javax.ws.rs.core.Application;
 
 import org.glassfish.jersey.test.JerseyTest;
 
-public  class EnvironmentTest extends JerseyTest {
+public abstract  class EnvironmentTest extends JerseyTest {
 
 	@Override
 	protected Application configure() {
